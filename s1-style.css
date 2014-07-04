@@ -1,0 +1,282 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    height: 100%;
+}
+/* Here reset ends*/
+
+/************Global**************/
+@media(min-width: 1px) and (max-width: 767px)
+{
+    header {
+    width: 100%;
+}
+#main-nav li {
+    width: 100%;
+}
+}
+
+.grid-container {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media(min-width: 768px){
+
+    .grid-container > [class ^= "grid-"] {
+        float:left;
+        min-height: 1px;
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .grid-container > [class ^= "grid-"]:first-child {
+        margin-left: 0;
+    }
+    .grid-container > [class ^= "grid-"]:last-child {
+        float: right;
+    }
+header {
+    background-color: #97282C;
+    color: #F9DFAD;
+    text-align: center;
+    min-height: 100px;
+    width: 100%;
+}
+#main-nav li a {
+    text-decoration: none;
+    color:#97282C ;
+}
+body {
+    background-color: #FCEED2;
+    color: #97282C;
+    font-size: 1.25em;
+}
+h2 {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 10px;
+}
+#main-logo {
+    font-size: 3em;
+    top:0;
+}
+#main-nav {
+    position: relative;
+    text-align: center;
+    bottom:-12px;
+}
+#main-nav li {
+     font-size: 1.25em;
+     display: inline-block;
+     margin-right: 10px;
+     margin-left: 10px;
+     background-color: #F9DFAD;
+     padding-left: 8px;
+     padding-right: 8px;
+     border-radius: 5px;
+    
+}
+.main-banner {
+    
+}
+.main-banner h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+#banner-para {
+    text-align: left;
+}
+#search-box {
+    display: inline;
+    margin: auto;
+    border-radius: 10px;
+    font-size: 1.25em;
+    width: 75%;
+    border: 1px solid #97282C;
+}
+input:focus {
+
+    outline-width: 0;
+}
+#search-container {
+    text-align: center;
+    height: 50px;
+    padding-top: 30px;
+    width: 100%;
+}
+#search-container p {
+    margin-right: 10px;
+    display: inline;
+
+}
+.search-result {
+    border: 1px solid #BBAC90;
+    border-radius: 5px;
+}
+#data-table {
+    border: 1px solid #BBAC90;
+    box-shadow: 0 2px 0 #BBAC90;
+    margin: 5px;
+    min-height: 250px;
+}
+.data-header {
+    border: 2px solid #BBAC90;
+    box-shadow: 0 2px 0 #BBAC90;
+    margin: 5px;
+}
+.data-row {
+    text-align: center;
+    margin: 15px;
+}
+
+.update {
+    min-height: 180px;
+    
+}
+.play-list {
+    min-height: 200px;
+    
+}
+.right-column {
+    margin-bottom: 30px;
+    border: 1px solid #BBAC90;
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+}
+
+#footer {
+   height: 120px;
+   background-color: #97282C;
+    color: #F9DFAD;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    
+
+}
+#footer a {
+   color: #F9DFAD;
+    text-decoration: none;
+}
+.sponsor {
+    top: 10px;
+    float: left;
+    display: inline-block;
+    position: relative;
+
+}
+.contact {
+    top: 10px;
+    float: right;
+    position: relative;
+}
+#play-selected {
+    border:.5px solid green;
+}
+.check-item {
+    border: 1px solid black;
+}
+#display-item {
+    text-align: left;
+    padding-left: 20%;
+}
+/*--------clearfix -------*/ 
+.group:after,
+grid-container:after {
+    content:'';
+    clear:both;
+    display:table;
+}
+/*------columns are 65px wide and 20px gutters ------------*/
+.grid-1 {
+    width: 6.5%;
+}
+.grid-2 {
+    width: 15%;
+}
+.grid-3 {
+    width: 23.5%;
+
+}
+.grid-4 {
+    width:32%;
+}
+.grid-5 {
+    width:40.5%; 
+}
+.grid-6 {
+    width:49%;
+    
+}
+.grid-7 {
+    width:57.5%;
+}
+.grid-8 {
+    width:70%; 
+}
+.grid-9 {
+    width:74.5%; 
+}
+.grid-10 {
+    width: 83%;
+}
+.grid-11 {
+    width:91.5%; 
+}
+.grid-12 {
+    width:100%; 
+}
+}

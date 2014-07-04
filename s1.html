@@ -1,0 +1,162 @@
+<!Doctype html>
+<html>
+  <head>
+    <title>Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="s1-style.css">
+     <!--<script type="text/javascript" src = "s1-main.js"></script>-->
+     
+     
+
+  </head>
+  <body>
+  
+  <header>
+    
+      <h1 id = "main-logo" >Prapatti.com</h1>
+      <ul id = "main-nav" >
+        <li><a href = "index.html">Home</a></li>
+        <li><a href = "#">Stotras</a></li>
+        <li><a href = "#">Audio MP3</a></li>
+        <li><a href = "#">Links</a></li>
+        <li><a href = "#">Contact</a></li>
+        <li><a href = "#">Photos</a></li>
+        <li><a href = "#">Updates</a></li>
+         <li><a href = "#">Guest Book</a></li>
+      </ul>
+  </header>
+  
+  <div class = "grid-container">
+  
+    <div class = "grid-8 search-result">
+      <div id = "search-container">
+        <p> Search Slokha:</p><input type = "text" name = 'search' id = "search-box" placeholder = "" autofocus/>
+      </div>
+      <table id = "data-table">
+        <thead>
+          <tr class = "data-header">
+            <th>Slokha</th>
+            <th>Author</th>
+            <th>language</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class = "data-row">  
+            <td class = "play-item"><a src = "hayagriivastotram.mp3">Hayagriva Sthothram </a></td>  
+            <td>Vedantha Desihar</td>
+            <td>Tamil</td>
+          </tr>
+          <tr class = "data-row">
+            <td class = "play-item"><a src = "chatusslokii.mp3">Chatusslokii </a></td>
+            <td>Yaamunaacharya </td>
+            <td>Telugu</td>
+          </tr>
+        </tbody>
+      </table>
+      <div >
+      <a id = "play-selected"> Play Selected.</a>
+      <a id = "clear-all">Clear All</a>
+      <audio id = "audio-player" controls="controls" width="300">     
+        <!-- <source type = "audio/ogg">
+        <source type = "audio/mpeg">   Accepts Mp3 file source.
+        <source type = "audio/wav">  -->
+        Sorry, Your browser does not support audio element. 
+      </audio>
+      </div>
+
+      <div class = "update right-column">
+        <h2>Updates</h2>
+          <table>
+            <tr>
+              <td>Mar 04 2014</td>
+              <td>Sriiraama Chatushshlokii, a stotram by Villuur Nadaduur U. Ve. Srii Sriinidhi Swami, available in MP3 audio</td>
+            </tr>
+          </table>
+      </div>
+
+    </div>
+
+    <div class = "grid-3">
+
+        <div class = "main-banner right-column" >
+          <h1>Welcome to Prapatti online.</h1>
+          <p id = "banner-para">Prapatti Online is a humble effort to provide information about Sri Vaishnavism. This site features several Photo Galleries including 108 Divya Desams & Sri Vaishnava Acharyas. A growing collection of Stotras in many languages and Audio MP3 Recordings are also available.</p>
+
+          <p>Thank you for visiting.</p>
+        </div>
+
+      
+      <div class = "play-list right-column">
+        <h2> Play List</h2>
+        <p>
+          <output>
+          <ul id = "display-item">
+          </ul>
+            
+          </output>
+        </p>
+      </div>
+    
+    </div>
+    
+  
+
+  <div id = "footer" class ="grid-12">
+       <div class = "sponsor grid-7">
+        <h2> Website Sponsored by Smt. Radhika Rajagopalan,Sri. A.S.Rajagopalan.</h2>
+        <h3>Please visit their website <a href="http:/www.dvayam.com">www.dvayam.com</a></h3>
+       </div>
+      <div class = "contact grid-4">  
+        <ul>
+        <li>Prapatti Online - www.prapatti.com</li>
+        <li>Sunder Kidambi sunder@prapatti.com</li>
+        <li>A.S. Rajagopalan malolan@prapatti.com</li>
+        </ul>
+        </div>
+  </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src = "jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src = "jquery.tablesorter.widgets.min.js"></script>
+<script type="text/javascript" src = "audio_player.js"></script>
+  <script type="text/javascript">
+/*$(document).ready(function(){
+   $("#searchBox").keyup(function(){
+    var searchText = $("#searchBox").val();
+    var lookUpTable = $("#dataTable tbody tr");
+    if(searchText.length >3){
+    var match = $('tr.dataRow:contains("' + searchText +'")');
+    var noMatch = $('tr.dataRow:not(:contains("' + searchText +' "))');
+    noMatch.css(“display”, “none”);
+    match.addClass(‘selected’);
+  } else {
+  $('tr.dataRow').css("display",'');
+   $('tr.dataRow').removeClass('selected');  
+  }
+});
+});*/
+$(document).ready(function(){  
+  $('input[name="search"]').keyup(function(){ 
+  var searchterm = $(this).val();
+        if(searchterm.length >2) {
+  var match = $('tr.data-row:contains("' + searchterm + '")');
+  var nomatch = $('tr.data-row:not(:contains("' + searchterm + '"))');
+          match.addClass('selected');
+  nomatch.css("display", "none");
+  } else {
+  $('tr.data-row').css("display", "");
+  $('tr.data-row').removeClass('selected');
+          }
+        });
+  $("#data-table").tablesorter({sortList: [[0,0],[1,0]]});
+}); 
+$.expr[':'].contains = function(a,i,m){
+return $(a).text().toUpperCase().indexOf(m[3].toUpperCase())>=0;
+};
+
+</script>
+  
+  
+  </body>
+</html>
